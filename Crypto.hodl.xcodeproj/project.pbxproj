@@ -11,8 +11,6 @@
 		9DD0BAF227D136EB0065F391 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF127D136EB0065F391 /* ContentView.swift */; };
 		9DD0BAF427D136EC0065F391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF327D136EC0065F391 /* Assets.xcassets */; };
 		9DD0BAF727D136EC0065F391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */; };
-		9DD0BAF927D136EC0065F391 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF827D136EC0065F391 /* Persistence.swift */; };
-		9DD0BAFC27D136EC0065F391 /* Crypto_hodl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BAFA27D136EC0065F391 /* Crypto_hodl.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +19,6 @@
 		9DD0BAF127D136EB0065F391 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9DD0BAF327D136EC0065F391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9DD0BAF827D136EC0065F391 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		9DD0BAFB27D136EC0065F391 /* Crypto_hodl.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crypto_hodl.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +54,6 @@
 				9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */,
 				9DD0BAF127D136EB0065F391 /* ContentView.swift */,
 				9DD0BAF327D136EC0065F391 /* Assets.xcassets */,
-				9DD0BAF827D136EC0065F391 /* Persistence.swift */,
-				9DD0BAFA27D136EC0065F391 /* Crypto_hodl.xcdatamodeld */,
 				9DD0BAF527D136EC0065F391 /* Preview Content */,
 			);
 			path = Crypto.hodl;
@@ -143,10 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD0BAF927D136EC0065F391 /* Persistence.swift in Sources */,
 				9DD0BAF227D136EB0065F391 /* ContentView.swift in Sources */,
 				9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */,
-				9DD0BAFC27D136EC0065F391 /* Crypto_hodl.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,19 +341,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9DD0BAFA27D136EC0065F391 /* Crypto_hodl.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9DD0BAFB27D136EC0065F391 /* Crypto_hodl.xcdatamodel */,
-			);
-			currentVersion = 9DD0BAFB27D136EC0065F391 /* Crypto_hodl.xcdatamodel */;
-			path = Crypto_hodl.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9DD0BAE427D136EB0065F391 /* Project object */;
 }
