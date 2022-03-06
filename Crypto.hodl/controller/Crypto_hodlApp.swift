@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct Crypto_hodlApp: App {
-
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			Frame()
 		}
     }
 }

@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */; };
-		9DD0BAF227D136EB0065F391 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF127D136EB0065F391 /* ContentView.swift */; };
 		9DD0BAF427D136EC0065F391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF327D136EC0065F391 /* Assets.xcassets */; };
 		9DD0BAF727D136EC0065F391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */; };
+		9DD0BB0727D53DB60065F391 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB0527D53DB60065F391 /* Database.xcdatamodeld */; };
+		9DD0BB0927D53F270065F391 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB0827D53F270065F391 /* PersistenceController.swift */; };
+		9DD0BB0B27D53F940065F391 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB0A27D53F940065F391 /* Header.swift */; };
+		9DD0BB0D27D54C820065F391 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB0C27D54C820065F391 /* Frame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9DD0BAEC27D136EB0065F391 /* Crypto.hodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.hodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_hodlApp.swift; sourceTree = "<group>"; };
-		9DD0BAF127D136EB0065F391 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9DD0BAF327D136EC0065F391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9DD0BB0627D53DB60065F391 /* Asset.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Asset.xcdatamodel; sourceTree = "<group>"; };
+		9DD0BB0827D53F270065F391 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		9DD0BB0A27D53F940065F391 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		9DD0BB0C27D54C820065F391 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +57,9 @@
 		9DD0BAEE27D136EB0065F391 /* Crypto.hodl */ = {
 			isa = PBXGroup;
 			children = (
-				9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */,
-				9DD0BAF127D136EB0065F391 /* ContentView.swift */,
-				9DD0BAF327D136EC0065F391 /* Assets.xcassets */,
+				9DD0BB0427D53D430065F391 /* controller */,
+				9DD0BB0327D53D320065F391 /* model */,
+				9DD0BB0227D53D230065F391 /* view */,
 				9DD0BAF527D136EC0065F391 /* Preview Content */,
 			);
 			path = Crypto.hodl;
@@ -65,6 +71,33 @@
 				9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9DD0BB0227D53D230065F391 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0BAF327D136EC0065F391 /* Assets.xcassets */,
+				9DD0BB0A27D53F940065F391 /* Header.swift */,
+				9DD0BB0C27D54C820065F391 /* Frame.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		9DD0BB0327D53D320065F391 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0BB0527D53DB60065F391 /* Database.xcdatamodeld */,
+				9DD0BB0827D53F270065F391 /* PersistenceController.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9DD0BB0427D53D430065F391 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD0BAF227D136EB0065F391 /* ContentView.swift in Sources */,
+				9DD0BB0B27D53F940065F391 /* Header.swift in Sources */,
+				9DD0BB0727D53DB60065F391 /* Database.xcdatamodeld in Sources */,
 				9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */,
+				9DD0BB0927D53F270065F391 /* PersistenceController.swift in Sources */,
+				9DD0BB0D27D54C820065F391 /* Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +377,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9DD0BB0527D53DB60065F391 /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9DD0BB0627D53DB60065F391 /* Asset.xcdatamodel */,
+			);
+			currentVersion = 9DD0BB0627D53DB60065F391 /* Asset.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9DD0BAE427D136EB0065F391 /* Project object */;
 }
