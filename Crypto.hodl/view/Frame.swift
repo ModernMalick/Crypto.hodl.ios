@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Frame: View {
 	
+	@Environment(\.managedObjectContext) private var viewContext
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.ticker)]) var fetchRequest: FetchedResults<Asset>
 	@State private var value: Double = 0
 	@State private var invested: Double = 0
@@ -16,18 +17,35 @@ struct Frame: View {
 	@State private var gainsPercent: Double = 0
 	@State private var image: String = "minus"
 	@State private var color: Color = Color.gray
-	
 	@AppStorage("currency") private var currency = "$"
 	
     var body: some View {
-		Header(
-			currency: currency, value: value, invested: invested, gainsFiat: gainsFiat, gainsPercent: gainsPercent, image: image, color: color
-		).onAppear(){
-			getTotals()
+		VStack{
+			Header(
+				currency: currency, value: value, invested: invested, gainsFiat: gainsFiat, gainsPercent: gainsPercent, image: image, color: color
+			).onAppear(){
+				getTotals()
+			}
+			
+			VStack{
+				List{
+					TableHeader()
+					ForEach(fetchRequest) { asset in
+						let gain = asset.value - asset.invested
+						TableRow(currency: currency, asset: asset, gain: gain)
+					}.onDelete(perform: deleteAsset)
+				}
+			}
+			
+			Button("Add", action: addAsset)
 		}
+
     }
 	
 	func getTotals(){
+		value = 0
+		invested = 0
+		
 		for asset in fetchRequest {
 			value += asset.value
 			invested += asset.invested
@@ -42,6 +60,32 @@ struct Frame: View {
 				image = "multiply"
 				color = Color.red
 			}
+		}
+	}
+	
+	func addAsset(){
+		let newAsset = Asset(context: viewContext)
+		newAsset.ticker = "BTC"
+		newAsset.invested = 50
+		newAsset.value = 75
+		saveVC()
+	}
+	
+	func deleteAsset(at offsets: IndexSet){
+		for offset in offsets {
+			let asset = fetchRequest[offset]
+			viewContext.delete(asset)
+		}
+		saveVC()
+	}
+	
+	func saveVC(){
+		do {
+			try viewContext.save()
+			getTotals()
+		} catch {
+			let error = error as NSError
+			fatalError("Unresolved Error: \(error)")
 		}
 	}
 }

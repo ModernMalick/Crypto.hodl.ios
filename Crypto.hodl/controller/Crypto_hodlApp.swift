@@ -10,9 +10,12 @@ import CoreData
 
 @main
 struct Crypto_hodlApp: App {
+	let persistenceContainer = PersistenceController.shared
+	
     var body: some Scene {
         WindowGroup {
 			Frame()
+				.environment(\.managedObjectContext, persistenceContainer.container.viewContext)
 		}
     }
 }

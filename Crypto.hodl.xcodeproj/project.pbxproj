@@ -10,10 +10,12 @@
 		9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */; };
 		9DD0BAF427D136EC0065F391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF327D136EC0065F391 /* Assets.xcassets */; };
 		9DD0BAF727D136EC0065F391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */; };
-		9DD0BB0727D53DB60065F391 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB0527D53DB60065F391 /* Database.xcdatamodeld */; };
 		9DD0BB0927D53F270065F391 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB0827D53F270065F391 /* PersistenceController.swift */; };
 		9DD0BB0B27D53F940065F391 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB0A27D53F940065F391 /* Header.swift */; };
 		9DD0BB0D27D54C820065F391 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB0C27D54C820065F391 /* Frame.swift */; };
+		9DD0BB1027D69DEE0065F391 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB0F27D69DEE0065F391 /* TableHeader.swift */; };
+		9DD0BB1227D69EB50065F391 /* TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB1127D69EB50065F391 /* TableRow.swift */; };
+		9DD0BB1E27D6B1010065F391 /* Asset.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BB1C27D6B1010065F391 /* Asset.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,10 +23,12 @@
 		9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_hodlApp.swift; sourceTree = "<group>"; };
 		9DD0BAF327D136EC0065F391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9DD0BB0627D53DB60065F391 /* Asset.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Asset.xcdatamodel; sourceTree = "<group>"; };
 		9DD0BB0827D53F270065F391 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		9DD0BB0A27D53F940065F391 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		9DD0BB0C27D54C820065F391 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		9DD0BB0F27D69DEE0065F391 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
+		9DD0BB1127D69EB50065F391 /* TableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRow.swift; sourceTree = "<group>"; };
+		9DD0BB1D27D6B1010065F391 /* Asset.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Asset.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		9DD0BB0227D53D230065F391 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				9DD0BB0E27D69DC90065F391 /* Table */,
 				9DD0BAF327D136EC0065F391 /* Assets.xcassets */,
 				9DD0BB0A27D53F940065F391 /* Header.swift */,
 				9DD0BB0C27D54C820065F391 /* Frame.swift */,
@@ -86,8 +91,8 @@
 		9DD0BB0327D53D320065F391 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				9DD0BB0527D53DB60065F391 /* Database.xcdatamodeld */,
 				9DD0BB0827D53F270065F391 /* PersistenceController.swift */,
+				9DD0BB1C27D6B1010065F391 /* Asset.xcdatamodeld */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -98,6 +103,15 @@
 				9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		9DD0BB0E27D69DC90065F391 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0BB0F27D69DEE0065F391 /* TableHeader.swift */,
+				9DD0BB1127D69EB50065F391 /* TableRow.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,10 +185,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD0BB0B27D53F940065F391 /* Header.swift in Sources */,
-				9DD0BB0727D53DB60065F391 /* Database.xcdatamodeld in Sources */,
+				9DD0BB1227D69EB50065F391 /* TableRow.swift in Sources */,
 				9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */,
 				9DD0BB0927D53F270065F391 /* PersistenceController.swift in Sources */,
 				9DD0BB0D27D54C820065F391 /* Frame.swift in Sources */,
+				9DD0BB1027D69DEE0065F391 /* TableHeader.swift in Sources */,
+				9DD0BB1E27D6B1010065F391 /* Asset.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,13 +395,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9DD0BB0527D53DB60065F391 /* Database.xcdatamodeld */ = {
+		9DD0BB1C27D6B1010065F391 /* Asset.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9DD0BB0627D53DB60065F391 /* Asset.xcdatamodel */,
+				9DD0BB1D27D6B1010065F391 /* Asset.xcdatamodel */,
 			);
-			currentVersion = 9DD0BB0627D53DB60065F391 /* Asset.xcdatamodel */;
-			path = Database.xcdatamodeld;
+			currentVersion = 9DD0BB1D27D6B1010065F391 /* Asset.xcdatamodel */;
+			path = Asset.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
