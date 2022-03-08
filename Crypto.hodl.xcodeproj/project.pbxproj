@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D19F84727D7DC840083D9D1 /* AddAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F84627D7DC840083D9D1 /* AddAsset.swift */; };
 		9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */; };
 		9DD0BAF427D136EC0065F391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF327D136EC0065F391 /* Assets.xcassets */; };
 		9DD0BAF727D136EC0065F391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D19F84627D7DC840083D9D1 /* AddAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAsset.swift; sourceTree = "<group>"; };
 		9DD0BAEC27D136EB0065F391 /* Crypto.hodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.hodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_hodlApp.swift; sourceTree = "<group>"; };
 		9DD0BAF327D136EC0065F391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D19F84527D7DC640083D9D1 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				9D19F84627D7DC840083D9D1 /* AddAsset.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
 		9DD0BAE327D136EB0065F391 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +90,7 @@
 		9DD0BB0227D53D230065F391 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				9D19F84527D7DC640083D9D1 /* Sheets */,
 				9DD0BB0E27D69DC90065F391 /* Table */,
 				9DD0BAF327D136EC0065F391 /* Assets.xcassets */,
 				9DD0BB0A27D53F940065F391 /* Header.swift */,
@@ -186,6 +197,7 @@
 			files = (
 				9DD0BB0B27D53F940065F391 /* Header.swift in Sources */,
 				9DD0BB1227D69EB50065F391 /* TableRow.swift in Sources */,
+				9D19F84727D7DC840083D9D1 /* AddAsset.swift in Sources */,
 				9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */,
 				9DD0BB0927D53F270065F391 /* PersistenceController.swift in Sources */,
 				9DD0BB0D27D54C820065F391 /* Frame.swift in Sources */,

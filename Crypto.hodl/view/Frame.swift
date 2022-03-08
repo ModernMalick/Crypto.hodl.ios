@@ -18,6 +18,7 @@ struct Frame: View {
 	@State private var image: String = "minus"
 	@State private var color: Color = Color.gray
 	@AppStorage("currency") private var currency = "$"
+	@State private var showAdd = false
 	
     var body: some View {
 		VStack{
@@ -37,7 +38,11 @@ struct Frame: View {
 				}
 			}
 			
-			Button("Add", action: addAsset)
+			Button("Add") {
+				showAdd.toggle()
+			}.sheet(isPresented: $showAdd) {
+				AddAsset(currency: currency, add: addAssetFunc(addedTicker:addedInvested:addedValue:))
+			}
 		}
 
     }
@@ -45,29 +50,31 @@ struct Frame: View {
 	func getTotals(){
 		value = 0
 		invested = 0
+		gainsFiat = 0
+		gainsPercent = 0
+		color = Color.gray
 		
 		for asset in fetchRequest {
 			value += asset.value
 			invested += asset.invested
-			if(invested != 0){
-				gainsFiat = value - invested
-				gainsPercent = ((value - invested) * 100) / invested
-			}
+			gainsFiat = value - invested
+			gainsPercent = ((value - invested) * 100) / invested
+			gainsPercent.round()
 			if(gainsFiat > 0){
 				image = "plus"
 				color = Color.green
-			} else {
+			} else if(gainsFiat < 0) {
 				image = "multiply"
 				color = Color.red
 			}
 		}
 	}
 	
-	func addAsset(){
+	func addAssetFunc(addedTicker: String, addedInvested: Double, addedValue: Double){
 		let newAsset = Asset(context: viewContext)
-		newAsset.ticker = "BTC"
-		newAsset.invested = 50
-		newAsset.value = 75
+		newAsset.ticker = addedTicker
+		newAsset.invested = addedInvested
+		newAsset.value = addedValue
 		saveVC()
 	}
 	

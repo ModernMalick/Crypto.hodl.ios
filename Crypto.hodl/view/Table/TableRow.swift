@@ -25,8 +25,10 @@ struct TableRow: View {
 	func getColor() -> Color{
 		if(gain > 0){
 			return Color.green
-		} else {
+		} else if (gain < 0) {
 			return Color.red
+		} else {
+			return Color.gray
 		}
 	}
 }
