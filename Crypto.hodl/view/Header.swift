@@ -9,10 +9,10 @@ import SwiftUI
 
 struct Header: View {
 	var currency: String
-	var value: Double
-	var invested: Double
-	var gainsFiat: Double
-	var gainsPercent: Double
+	var value: Int64
+	var invested: Int64
+	var gainsFiat: Int64
+	var gainsPercent: Int64
 	var image: String
 	var color: Color
 	

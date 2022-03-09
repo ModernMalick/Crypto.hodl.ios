@@ -10,7 +10,7 @@ import SwiftUI
 struct TableRow: View {
 	var currency: String
 	var asset: Asset
-	var gain: Double
+	var gain: Int64
 	var save: () -> Void
 	@State private var showEdit: Bool = false
 	
@@ -33,7 +33,7 @@ struct TableRow: View {
 		}
     }
 	
-	func updateAsset(updatedTicker: String, updatedInvested: Double, updatedValue: Double){
+	func updateAsset(updatedTicker: String, updatedInvested: Int64, updatedValue: Int64){
 		asset.ticker = updatedTicker
 		asset.invested = updatedInvested
 		asset.value = updatedValue

@@ -11,10 +11,10 @@ struct Frame: View {
 	
 	@Environment(\.managedObjectContext) private var viewContext
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.ticker)]) var fetchRequest: FetchedResults<Asset>
-	@State private var value: Double = 0
-	@State private var invested: Double = 0
-	@State private var gainsFiat: Double = 0
-	@State private var gainsPercent: Double = 0
+	@State private var value: Int64 = 0
+	@State private var invested: Int64 = 0
+	@State private var gainsFiat: Int64 = 0
+	@State private var gainsPercent: Int64 = 0
 	@State private var image: String = "minus"
 	@State private var color: Color = Color.gray
 	@AppStorage("currency") private var currency = "$"
@@ -65,7 +65,6 @@ struct Frame: View {
 			invested += asset.invested
 			gainsFiat = value - invested
 			gainsPercent = ((value - invested) * 100) / invested
-			gainsPercent.round()
 			if(gainsFiat > 0){
 				image = "plus"
 				color = Color.green
@@ -76,7 +75,7 @@ struct Frame: View {
 		}
 	}
 	
-	func addAssetFunc(addedTicker: String, addedInvested: Double, addedValue: Double){
+	func addAssetFunc(addedTicker: String, addedInvested: Int64, addedValue: Int64){
 		let newAsset = Asset(context: viewContext)
 		newAsset.ticker = addedTicker
 		newAsset.invested = addedInvested

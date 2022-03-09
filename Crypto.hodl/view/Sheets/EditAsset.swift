@@ -10,11 +10,11 @@ import SwiftUI
 struct EditAsset: View {
 	var currency: String
 	var asset: Asset
-	var update: (String, Double, Double) -> Void
+	var update: (String, Int64, Int64) -> Void
 	@Environment(\.dismiss) var dismiss
 	@State private var newTicker: String = ""
-	@State private var newInvested: Double? = nil
-	@State private var newValue: Double? = nil
+	@State private var newInvested: Int64? = nil
+	@State private var newValue: Int64? = nil
 	
 	var body: some View {
 		VStack{
@@ -46,8 +46,8 @@ struct EditAsset: View {
 	
 	func save(){
 		var updateTicker: String = asset.ticker!
-		var updateInvested: Double = asset.invested
-		var updateValue: Double = asset.value
+		var updateInvested: Int64 = asset.invested
+		var updateValue: Int64 = asset.value
 		if(!newTicker.isEmpty){
 			updateTicker = newTicker
 		}

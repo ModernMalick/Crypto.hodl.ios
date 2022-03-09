@@ -9,11 +9,11 @@ import SwiftUI
 
 struct AddAsset: View {
 	var currency: String
-	var add: (String, Double, Double) -> Void
+	var add: (String, Int64, Int64) -> Void
 	@Environment(\.dismiss) var dismiss
 	@State private var ticker: String = ""
-	@State private var invested: Double? = nil
-	@State private var value: Double? = nil
+	@State private var invested: Int64? = nil
+	@State private var value: Int64? = nil
 	@State private var showMessage = false
 	
     var body: some View {
