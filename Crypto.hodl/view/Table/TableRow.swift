@@ -11,6 +11,9 @@ struct TableRow: View {
 	var currency: String
 	var asset: Asset
 	var gain: Double
+	var save: () -> Void
+	@State private var showEdit: Bool = false
+	
 	
     var body: some View {
 		HStack{
@@ -19,8 +22,23 @@ struct TableRow: View {
 			Text(String(asset.value) + currency)
 			Text(String(gain) + currency)
 				.foregroundColor(getColor())
+			Image(systemName: "square.and.pencil")
+				.onTapGesture {
+					showEdit.toggle()
+					print(asset.ticker!)
+				}
+				.sheet(isPresented: $showEdit) {
+					EditAsset(currency: currency, asset: asset, update: updateAsset(updatedTicker:updatedInvested:updatedValue:))
+				}
 		}
     }
+	
+	func updateAsset(updatedTicker: String, updatedInvested: Double, updatedValue: Double){
+		asset.ticker = updatedTicker
+		asset.invested = updatedInvested
+		asset.value = updatedValue
+		save()
+	}
 	
 	func getColor() -> Color{
 		if(gain > 0){

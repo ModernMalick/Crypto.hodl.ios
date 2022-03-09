@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9D19F84727D7DC840083D9D1 /* AddAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F84627D7DC840083D9D1 /* AddAsset.swift */; };
+		9D19F84927D91DF30083D9D1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F84827D91DF30083D9D1 /* Settings.swift */; };
+		9D19F84B27D9252D0083D9D1 /* EditAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F84A27D9252D0083D9D1 /* EditAsset.swift */; };
 		9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */; };
 		9DD0BAF427D136EC0065F391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF327D136EC0065F391 /* Assets.xcassets */; };
 		9DD0BAF727D136EC0065F391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		9D19F84627D7DC840083D9D1 /* AddAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAsset.swift; sourceTree = "<group>"; };
+		9D19F84827D91DF30083D9D1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		9D19F84A27D9252D0083D9D1 /* EditAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAsset.swift; sourceTree = "<group>"; };
 		9DD0BAEC27D136EB0065F391 /* Crypto.hodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.hodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_hodlApp.swift; sourceTree = "<group>"; };
 		9DD0BAF327D136EC0065F391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				9D19F84627D7DC840083D9D1 /* AddAsset.swift */,
+				9D19F84827D91DF30083D9D1 /* Settings.swift */,
+				9D19F84A27D9252D0083D9D1 /* EditAsset.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -201,7 +207,9 @@
 				9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */,
 				9DD0BB0927D53F270065F391 /* PersistenceController.swift in Sources */,
 				9DD0BB0D27D54C820065F391 /* Frame.swift in Sources */,
+				9D19F84927D91DF30083D9D1 /* Settings.swift in Sources */,
 				9DD0BB1027D69DEE0065F391 /* TableHeader.swift in Sources */,
+				9D19F84B27D9252D0083D9D1 /* EditAsset.swift in Sources */,
 				9DD0BB1E27D6B1010065F391 /* Asset.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

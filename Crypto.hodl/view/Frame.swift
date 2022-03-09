@@ -19,6 +19,7 @@ struct Frame: View {
 	@State private var color: Color = Color.gray
 	@AppStorage("currency") private var currency = "$"
 	@State private var showAdd = false
+	@State private var showSettings = false
 	
     var body: some View {
 		VStack{
@@ -33,15 +34,20 @@ struct Frame: View {
 					TableHeader()
 					ForEach(fetchRequest) { asset in
 						let gain = asset.value - asset.invested
-						TableRow(currency: currency, asset: asset, gain: gain)
+						TableRow(currency: currency, asset: asset, gain: gain, save: saveVC)
 					}.onDelete(perform: deleteAsset)
 				}
 			}
-			
 			Button("Add") {
 				showAdd.toggle()
 			}.sheet(isPresented: $showAdd) {
 				AddAsset(currency: currency, add: addAssetFunc(addedTicker:addedInvested:addedValue:))
+			}
+			
+			Button("Settings") {
+				showSettings.toggle()
+			}.sheet(isPresented: $showSettings, onDismiss: checkCurrency) {
+				Settings()
 			}
 		}
 
@@ -84,6 +90,12 @@ struct Frame: View {
 			viewContext.delete(asset)
 		}
 		saveVC()
+	}
+	
+	func checkCurrency(){
+		if(currency.isEmpty){
+			currency = "€"
+		}
 	}
 	
 	func saveVC(){
