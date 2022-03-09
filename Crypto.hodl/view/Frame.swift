@@ -63,8 +63,15 @@ struct Frame: View {
 		for asset in fetchRequest {
 			value += asset.value
 			invested += asset.invested
+			
 			gainsFiat = value - invested
-			gainsPercent = ((value - invested) * 100) / invested
+			
+			if(invested != 0){
+				gainsPercent = ((value - invested) * 100) / invested
+			} else {
+				gainsPercent = 100
+			}
+			
 			if(gainsFiat > 0){
 				image = "plus"
 				color = Color.green
