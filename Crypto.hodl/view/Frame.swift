@@ -28,29 +28,46 @@ struct Frame: View {
 			).onAppear(){
 				getTotals()
 			}
-			
+			Spacer()
 			VStack{
+				TableHeader()
+					.padding(.top, 16.0)
 				List{
-					TableHeader()
 					ForEach(fetchRequest) { asset in
 						let gain = asset.value - asset.invested
 						TableRow(currency: currency, asset: asset, gain: gain, save: saveVC)
-					}.onDelete(perform: deleteAsset)
+							.padding()
+							.listRowBackground(Color("surfaceVariant").cornerRadius(8))
+					}
+					.onDelete(perform: deleteAsset)
 				}
+				.onAppear(perform: {
+					UITableView.appearance().backgroundColor = .clear
+					UITableView.appearance().separatorColor = .clear
+					UITableView.appearance().contentInset.top = -35
+					UITableView.appearance().separatorInset.bottom = 50
+				})
 			}
+				.background(Color("surface"))
+				.cornerRadius(8)
+				.padding(16.0)
 			Button("Add") {
 				showAdd.toggle()
 			}.sheet(isPresented: $showAdd) {
 				AddAsset(currency: currency, add: addAssetFunc(addedTicker:addedInvested:addedValue:))
 			}
-			
+
 			Button("Settings") {
 				showSettings.toggle()
 			}.sheet(isPresented: $showSettings, onDismiss: checkCurrency) {
 				Settings()
 			}
 		}
-
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
+		.ignoresSafeArea()
+		.background(
+			LinearGradient(gradient: Gradient(colors: [Color("primary"), Color("secondary")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+		)
     }
 	
 	func getTotals(){
@@ -58,7 +75,8 @@ struct Frame: View {
 		invested = 0
 		gainsFiat = 0
 		gainsPercent = 0
-		color = Color.gray
+		color = Color("placeholder")
+		image = "bankrupt"
 		
 		for asset in fetchRequest {
 			value += asset.value
@@ -73,11 +91,11 @@ struct Frame: View {
 			}
 			
 			if(gainsFiat > 0){
-				image = "plus"
-				color = Color.green
+				image = "rocket"
+				color = Color("gainsGood")
 			} else if(gainsFiat < 0) {
-				image = "multiply"
-				color = Color.red
+				image = "explosion"
+				color = Color("gainsBad")
 			}
 		}
 	}

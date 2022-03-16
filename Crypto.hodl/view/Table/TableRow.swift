@@ -16,13 +16,22 @@ struct TableRow: View {
 	
 	
     var body: some View {
-		HStack{
+		HStack(spacing: 0){
 			Text(asset.ticker!)
+				.multilineTextAlignment(.center)
+				.frame(minWidth: 0, maxWidth: .infinity)
 			Text(String(asset.invested) + currency)
+				.multilineTextAlignment(.center)
+				.frame(minWidth: 0, maxWidth: .infinity)
 			Text(String(asset.value) + currency)
+				.multilineTextAlignment(.center)
+				.frame(minWidth: 0, maxWidth: .infinity)
 			Text(String(gain) + currency)
 				.foregroundColor(getColor())
+				.multilineTextAlignment(.center)
+				.frame(minWidth: 0, maxWidth: .infinity)
 			Image(systemName: "square.and.pencil")
+				.frame(minWidth: 0, maxWidth: 48)
 				.onTapGesture {
 					showEdit.toggle()
 					print(asset.ticker!)
@@ -31,7 +40,9 @@ struct TableRow: View {
 					EditAsset(currency: currency, asset: asset, update: updateAsset(updatedTicker:updatedInvested:updatedValue:))
 				}
 		}
-    }
+		.font(Font.custom("Montserrat-Regular", size: 16))
+		.foregroundColor(Color.white)
+	}
 	
 	func updateAsset(updatedTicker: String, updatedInvested: Int64, updatedValue: Int64){
 		asset.ticker = updatedTicker
@@ -42,11 +53,11 @@ struct TableRow: View {
 	
 	func getColor() -> Color{
 		if(gain > 0){
-			return Color.green
+			return Color("gainsGood")
 		} else if (gain < 0) {
-			return Color.red
+			return Color("gainsBad")
 		} else {
-			return Color.gray
+			return Color("placeholder")
 		}
 	}
 }

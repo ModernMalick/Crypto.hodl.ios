@@ -22,26 +22,47 @@ struct Header: View {
 		let gainsPercentText = String(gainsPercent) + "% "
 		let gainsFiatText = String(gainsFiat) + currency
 		
-		HStack{
-			VStack{
-				Text("Bienvenue sur votre portfolio")
-				HStack{
-					Text("Valeur actuelle: ")
-					Text(valueText)
-						.foregroundColor(color)
+		VStack(alignment: .leading){
+			Text("Bienvenue sur votre portfolio !")
+				.font(Font.custom("Montserrat-Bold", size: 18))
+				.frame(maxWidth: .infinity, alignment: .leading)
+				.foregroundColor(Color.white)
+			Spacer()
+				.frame(maxHeight: 4)
+			HStack{
+				VStack(alignment: .leading){
+					HStack{
+						Text("Valeur actuelle: ")
+							.foregroundColor(Color.white)
+						Text(valueText)
+							.foregroundColor(color)
+					}
+					.font(Font.custom("Montserrat-Regular", size: 16))
+					Spacer()
+						.frame(maxHeight: 4)
+					Text("Valeur investie: " + investedText)
+						.foregroundColor(Color.white)
+					Spacer()
+						.frame(maxHeight: 4)
+					HStack{
+						Text("Gains: ")
+							.foregroundColor(Color.white)
+						Text(gainsPercentText +  "(" + gainsFiatText + ")")
+							.foregroundColor(color)
+					}
 				}
-				Text("Valeur investie: " + investedText)
-				HStack{
-					Text("Gains: ")
-					Text(gainsPercentText +  "(" + gainsFiatText + ")")
-						.foregroundColor(color)
-				}
+				.font(Font.custom("Montserrat-Regular", size: 14))
+				Spacer()
+				Image(image)
+					.resizable()
+					.frame(width: 64.0, height: 64.0)
 			}
-			Image(systemName: self.image)
-				.foregroundColor(self.color)
-				.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-				.frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
 		}
+		.padding(.top, 24.0)
+		.padding()
+		.frame(maxWidth: .infinity)
+		.background(Color("surface"))
+		.cornerRadius(8)
     }
 }
 

@@ -10,6 +10,8 @@
 		9D19F84727D7DC840083D9D1 /* AddAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F84627D7DC840083D9D1 /* AddAsset.swift */; };
 		9D19F84927D91DF30083D9D1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F84827D91DF30083D9D1 /* Settings.swift */; };
 		9D19F84B27D9252D0083D9D1 /* EditAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D19F84A27D9252D0083D9D1 /* EditAsset.swift */; };
+		9D19F84F27E0023C0083D9D1 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D19F84D27E0023C0083D9D1 /* Montserrat-Bold.ttf */; };
+		9D19F85027E0023C0083D9D1 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D19F84E27E0023C0083D9D1 /* Montserrat-Regular.ttf */; };
 		9DD0BAF027D136EB0065F391 /* Crypto_hodlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */; };
 		9DD0BAF427D136EC0065F391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF327D136EC0065F391 /* Assets.xcassets */; };
 		9DD0BAF727D136EC0065F391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0BAF627D136EC0065F391 /* Preview Assets.xcassets */; };
@@ -25,6 +27,9 @@
 		9D19F84627D7DC840083D9D1 /* AddAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAsset.swift; sourceTree = "<group>"; };
 		9D19F84827D91DF30083D9D1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9D19F84A27D9252D0083D9D1 /* EditAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAsset.swift; sourceTree = "<group>"; };
+		9D19F84D27E0023C0083D9D1 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../../Volumes/NO NAME/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		9D19F84E27E0023C0083D9D1 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../../../Volumes/NO NAME/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		9D19F85127E005710083D9D1 /* Crypto-hodl-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Crypto-hodl-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9DD0BAEC27D136EB0065F391 /* Crypto.hodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.hodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD0BAEF27D136EB0065F391 /* Crypto_hodlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_hodlApp.swift; sourceTree = "<group>"; };
 		9DD0BAF327D136EC0065F391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +63,15 @@
 			path = Sheets;
 			sourceTree = "<group>";
 		};
+		9D19F84C27E002210083D9D1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9D19F84D27E0023C0083D9D1 /* Montserrat-Bold.ttf */,
+				9D19F84E27E0023C0083D9D1 /* Montserrat-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		9DD0BAE327D136EB0065F391 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +91,8 @@
 		9DD0BAEE27D136EB0065F391 /* Crypto.hodl */ = {
 			isa = PBXGroup;
 			children = (
+				9D19F85127E005710083D9D1 /* Crypto-hodl-Info.plist */,
+				9D19F84C27E002210083D9D1 /* fonts */,
 				9DD0BB0427D53D430065F391 /* controller */,
 				9DD0BB0327D53D320065F391 /* model */,
 				9DD0BB0227D53D230065F391 /* view */,
@@ -189,8 +205,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D19F85027E0023C0083D9D1 /* Montserrat-Regular.ttf in Resources */,
 				9DD0BAF727D136EC0065F391 /* Preview Assets.xcassets in Resources */,
 				9DD0BAF427D136EC0065F391 /* Assets.xcassets in Resources */,
+				9D19F84F27E0023C0083D9D1 /* Montserrat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +362,7 @@
 				DEVELOPMENT_TEAM = L2Z756854P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Crypto-hodl-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -373,6 +392,7 @@
 				DEVELOPMENT_TEAM = L2Z756854P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Crypto-hodl-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
