@@ -36,16 +36,15 @@ struct Frame: View {
 					ForEach(fetchRequest) { asset in
 						let gain = asset.value - asset.invested
 						TableRow(currency: currency, asset: asset, gain: gain, save: saveVC)
-							.padding()
-							.listRowBackground(Color("surfaceVariant").cornerRadius(8))
+							.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
+							.listRowBackground(Color("surfaceVariant").opacity(0))
 					}
 					.onDelete(perform: deleteAsset)
 				}
 				.onAppear(perform: {
 					UITableView.appearance().backgroundColor = .clear
 					UITableView.appearance().separatorColor = .clear
-					UITableView.appearance().contentInset.top = -35
-					UITableView.appearance().separatorInset.bottom = 50
+					UITableView.appearance().contentInset.top = -27
 				})
 			}
 				.background(Color("surface"))

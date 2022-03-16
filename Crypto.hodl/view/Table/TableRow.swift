@@ -16,7 +16,7 @@ struct TableRow: View {
 	
 	
     var body: some View {
-		HStack(spacing: 0){
+		HStack(spacing: 64){
 			Text(asset.ticker!)
 				.multilineTextAlignment(.center)
 				.frame(minWidth: 0, maxWidth: .infinity)
@@ -40,8 +40,10 @@ struct TableRow: View {
 					EditAsset(currency: currency, asset: asset, update: updateAsset(updatedTicker:updatedInvested:updatedValue:))
 				}
 		}
+		.padding()
 		.font(Font.custom("Montserrat-Regular", size: 16))
 		.foregroundColor(Color.white)
+		.background(Color("surfaceVariant").cornerRadius(8))
 	}
 	
 	func updateAsset(updatedTicker: String, updatedInvested: Int64, updatedValue: Int64){

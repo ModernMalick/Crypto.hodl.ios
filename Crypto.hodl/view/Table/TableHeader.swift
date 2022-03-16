@@ -24,9 +24,9 @@ struct TableHeader: View {
 				.frame(minWidth: 0, maxWidth: .infinity)
 			Text("")
 				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: 48)
+				.frame(minWidth: 0, maxWidth: 112)
 		}
-		.font(Font.custom("Montserrat-Bold", size: 16))
+		.font(Font.custom("Montserrat-Bold", size: 14))
 		.foregroundColor(Color.white)
 	}
 }
