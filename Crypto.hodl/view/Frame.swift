@@ -29,38 +29,69 @@ struct Frame: View {
 				getTotals()
 			}
 			Spacer()
+				.frame(height: 16)
 			VStack{
 				TableHeader()
 					.padding(.top, 16.0)
-				List{
-					ForEach(fetchRequest) { asset in
-						let gain = asset.value - asset.invested
-						TableRow(currency: currency, asset: asset, gain: gain, save: saveVC)
-							.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
-							.listRowBackground(Color("surfaceVariant").opacity(0))
+				if(fetchRequest.isEmpty){
+					Text("Veuillez ajouter un investissement ci-dessous afin de calculer vos gains")
+						.multilineTextAlignment(.center)
+						.font(Font.custom("Montserrat", size: 14))
+						.foregroundColor(Color("placeholder"))
+						.padding()
+				} else {
+					List{
+						ForEach(fetchRequest) { asset in
+							let gain = asset.value - asset.invested
+							TableRow(currency: currency, asset: asset, gain: gain, save: saveVC)
+								.listRowBackground(Color("surfaceVariant"))
+								.padding()
+						}
+						.onDelete(perform: deleteAsset)
 					}
-					.onDelete(perform: deleteAsset)
+					.onAppear(perform: {
+						UITableView.appearance().backgroundColor = .clear
+						UITableView.appearance().separatorColor = UIColor(Color.white.opacity(0.08))
+						UITableView.appearance().contentInset.top = -27
+					})
 				}
-				.onAppear(perform: {
-					UITableView.appearance().backgroundColor = .clear
-					UITableView.appearance().separatorColor = .clear
-					UITableView.appearance().contentInset.top = -27
-				})
 			}
 				.background(Color("surface"))
 				.cornerRadius(8)
 				.padding(16.0)
-			Button("Add") {
-				showAdd.toggle()
-			}.sheet(isPresented: $showAdd) {
-				AddAsset(currency: currency, add: addAssetFunc(addedTicker:addedInvested:addedValue:))
-			}
-
-			Button("Settings") {
-				showSettings.toggle()
-			}.sheet(isPresented: $showSettings, onDismiss: checkCurrency) {
-				Settings()
-			}
+			Spacer()
+			HStack(spacing: 0){
+				Spacer()
+					.frame(minWidth: 0, maxWidth: .infinity)
+				Button(action: {
+					showAdd.toggle()
+				}){
+					Image("plus")
+						.scaleEffect(0.125)
+				}
+				.frame(width: 64, height: 64)
+				.background(.white)
+				.cornerRadius(50)
+				.frame(minWidth: 0, maxWidth: .infinity)
+				.sheet(isPresented: $showAdd) {
+					AddAsset(currency: currency, add: addAssetFunc(addedTicker:addedInvested:addedValue:))
+				}
+				Button(action: {
+					showSettings.toggle()
+				}){
+					Image("settings")
+						.scaleEffect(0.1)
+				}
+				.frame(width: 48, height: 48)
+				.background(.white)
+				.cornerRadius(50)
+				.frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+				.sheet(isPresented: $showSettings, onDismiss: checkCurrency) {
+					Settings()
+				}
+			}.padding(.horizontal, 16)
+			Spacer()
+				.frame(height: 36)
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.ignoresSafeArea()

@@ -28,6 +28,7 @@ struct TableHeader: View {
 		}
 		.font(Font.custom("Montserrat-Bold", size: 14))
 		.foregroundColor(Color.white)
+		.padding(.horizontal)
 	}
 }
 
