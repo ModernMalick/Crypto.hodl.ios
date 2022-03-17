@@ -80,7 +80,7 @@ struct Frame: View {
 					showSettings.toggle()
 				}){
 					Image("settings")
-						.scaleEffect(0.1)
+						.scaleEffect(0.09375)
 				}
 				.frame(width: 48, height: 48)
 				.background(.white)
