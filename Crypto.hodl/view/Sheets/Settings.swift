@@ -12,16 +12,78 @@ struct Settings: View {
 	@AppStorage("currency") private var currency = "$"
 	
     var body: some View {
-		HStack{
-			Text("Devise")
-			TextField(
-				currency,
-				text: $currency
-			)
-			Button("Enregistrer") {
-				dismiss()
+		VStack{
+			Spacer()
+			Text("Paramètres")
+				.font(Font.custom("Montserrat-Bold", size: 18))
+				.frame(maxWidth: .infinity, alignment: .center)
+				.foregroundColor(Color.white)
+				.padding()
+			Spacer()
+			HStack{
+				Spacer()
+				Text("Devise")
+					.font(Font.custom("Montserrat-Regular", size: 16))
+					.foregroundColor(Color.white)
+					.padding()
+				TextField(
+					currency,
+					text: $currency
+				)
+					.padding()
+					.background(Color("surface"))
+					.cornerRadius(8)
+					.font(Font.custom("Montserrat-Bold", size: 16))
+					.foregroundColor(Color.white)
+					.padding(.trailing, 16)
+				Spacer()
 			}
+			Spacer()
+			VStack{
+				Link(destination: URL(string:"https://apps.apple.com/us/app/cappsule-minimalist-wardrobe/id1610504663")!,
+					 label: {
+					Text("Noter Crypto.hodl")
+						.font(Font.custom("Montserrat-Regular", size: 16))
+						.foregroundColor(.white)
+						.underline()
+				})
+					.padding()
+				Link(destination: URL(string:"https://modernmalick.com")!,
+					 label: {
+					Text("Mon site web")
+						.font(Font.custom("Montserrat-Regular", size: 16))
+						.foregroundColor(.white)
+						.underline()
+				})
+					.padding()
+				Link(destination: URL(string:"https://flaticon.com")!,
+					 label: {
+					Text("Icônes provenants de flaticon.com")
+						.font(Font.custom("Montserrat-Regular", size: 16))
+						.foregroundColor(Color("placeholder"))
+						.underline()
+				})
+				.padding()
+			}
+			Spacer()
+			Button {
+				dismiss()
+			} label: {
+				Text("Enregistrer")
+					.font(Font.custom("Montserrat-Bold", size: 14))
+					.foregroundColor(Color("primary"))
+			}
+			.padding(.horizontal, 16)
+			.padding(.vertical, 12)
+			.background(.white)
+			.cornerRadius(8)
+			Spacer()
 		}
+		.cornerRadius(8)
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
+		.background(
+			LinearGradient(gradient: Gradient(colors: [Color("primary"), Color("secondary")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+		)
 	}
 }
 
