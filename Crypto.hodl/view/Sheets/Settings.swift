@@ -26,16 +26,18 @@ struct Settings: View {
 					.font(Font.custom("Montserrat-Regular", size: 16))
 					.foregroundColor(Color.white)
 					.padding()
+					.padding(16)
 				TextField(
 					currency,
 					text: $currency
 				)
+					.frame(maxWidth: 100, alignment: .leading)
 					.padding()
 					.background(Color("surface"))
 					.cornerRadius(8)
 					.font(Font.custom("Montserrat-Bold", size: 16))
 					.foregroundColor(Color.white)
-					.padding(.trailing, 16)
+					.padding(16)
 				Spacer()
 			}
 			Spacer()

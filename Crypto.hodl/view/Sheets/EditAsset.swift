@@ -17,32 +17,89 @@ struct EditAsset: View {
 	@State private var newValue: Int64? = nil
 	
 	var body: some View {
-		VStack{
-			TextField(
-				asset.ticker!,
-				text: $newTicker
-			).autocapitalization(.allCharacters)
+		VStack(){
+			Spacer()
+			Text("Nouvel Investissement")
+				.font(Font.custom("Montserrat-Bold", size: 18))
+				.frame(maxWidth: .infinity, alignment: .center)
+				.foregroundColor(Color.white)
+				.padding()
+			Spacer()
 			HStack{
+				Spacer()
+				Text("Symbole")
+					.frame(maxWidth: 200, alignment: .leading)
+					.font(Font.custom("Montserrat-Regular", size: 16))
+					.foregroundColor(Color.white)
+				TextField(
+					asset.ticker!,
+					text: $newTicker
+				)
+					.padding()
+					.background(Color("surface"))
+					.cornerRadius(8)
+					.font(Font.custom("Montserrat-Bold", size: 16))
+					.foregroundColor(Color.white)
+					.autocapitalization(.allCharacters)
+				Spacer()
+			}.padding()
+			HStack(alignment: .center){
+				Spacer()
+				Text("Montant investi en \(currency)")
+					.frame(maxWidth: 200, alignment: .leading)
+					.font(Font.custom("Montserrat-Regular", size: 16))
+					.foregroundColor(Color.white)
 				TextField(
 					String(asset.invested),
 					value: $newInvested,
 					format: .number
-				).keyboardType(.numberPad)
-				Text(currency)
-			}
-			HStack{
+				)
+					.padding()
+					.background(Color("surface"))
+					.cornerRadius(8)
+					.font(Font.custom("Montserrat-Bold", size: 16))
+					.foregroundColor(Color.white)
+					.keyboardType(.numberPad)
+				Spacer()
+			}.padding()
+			HStack(alignment: .center){
+				Spacer()
+				Text("Valeur actuelle en \(currency)")
+					.frame(maxWidth: 200, alignment: .leading)
+					.font(Font.custom("Montserrat-Regular", size: 16))
+					.foregroundColor(Color.white)
 				TextField(
 					String(asset.value),
 					value: $newValue,
 					format: .number
-				).keyboardType(.numberPad)
-				Text(currency)
-			}
-			Button("Enregistrer") {
+				)
+					.padding()
+					.background(Color("surface"))
+					.cornerRadius(8)
+					.font(Font.custom("Montserrat-Bold", size: 16))
+					.foregroundColor(Color.white)
+					.keyboardType(.numberPad)
+				Spacer()
+			}.padding()
+			Spacer()
+			Button {
 				save()
+			} label: {
+				Text("Enregistrer")
+					.font(Font.custom("Montserrat-Bold", size: 14))
+					.foregroundColor(Color("primary"))
 			}
+			.padding(.horizontal, 16)
+			.padding(.vertical, 12)
+			.background(.white)
+			.cornerRadius(8)
+			Spacer()
 		}
-	}
+		.cornerRadius(8)
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
+		.background(
+			LinearGradient(gradient: Gradient(colors: [Color("primary"), Color("secondary")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+		)	}
 	
 	func save(){
 		var updateTicker: String = asset.ticker!
