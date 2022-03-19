@@ -38,6 +38,7 @@ struct Settings: View {
 					.font(Font.custom("Montserrat-Bold", size: 16))
 					.foregroundColor(Color.white)
 					.padding(16)
+					.disableAutocorrection(true)
 				Spacer()
 			}
 			Spacer()

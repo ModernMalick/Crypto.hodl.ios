@@ -41,6 +41,7 @@ struct AddAsset: View {
 					.font(Font.custom("Montserrat-Bold", size: 16))
 					.foregroundColor(Color.white)
 					.autocapitalization(.allCharacters)
+					.disableAutocorrection(true)
 				Spacer()
 			}.padding()
 			HStack(alignment: .center){
