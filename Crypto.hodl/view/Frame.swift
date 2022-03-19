@@ -17,7 +17,7 @@ struct Frame: View {
 	@State private var gainsPercent: Int64 = 0
 	@State private var image: String = "minus"
 	@State private var color: Color = Color.gray
-	@AppStorage("currency") private var currency = "$"
+	@AppStorage("currency") private var currency = "€"
 	@State private var showAdd = false
 	@State private var showSettings = false
 	
@@ -69,7 +69,8 @@ struct Frame: View {
 					showAdd.toggle()
 				}){
 					Image("plus")
-						.scaleEffect(0.125)
+						.resizable()
+						.frame(width: 64, height: 64, alignment: .center)
 				}
 				.frame(width: 64, height: 64)
 				.background(.white)
@@ -78,19 +79,24 @@ struct Frame: View {
 				.sheet(isPresented: $showAdd) {
 					AddAsset(currency: currency, add: addAssetFunc(addedTicker:addedInvested:addedValue:))
 				}
-				Button(action: {
-					showSettings.toggle()
-				}){
-					Image("settings")
-						.scaleEffect(0.09375)
-				}
-				.frame(width: 48, height: 48)
-				.background(.white)
-				.cornerRadius(50)
-				.frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-				.sheet(isPresented: $showSettings, onDismiss: checkCurrency) {
-					Settings()
-				}
+				VStack{
+					Spacer()
+					Button(action: {
+						showSettings.toggle()
+					}){
+						Image("settings")
+							.resizable()
+							.frame(width: 48, height: 48, alignment: .center)
+					}
+					.frame(width: 48, height: 48)
+					.background(.white)
+					.cornerRadius(50)
+					.frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+					.sheet(isPresented: $showSettings, onDismiss: checkCurrency) {
+						Settings()
+					}
+				}.frame(height: 64)
+
 			}.padding(.horizontal, 16)
 			Spacer()
 				.frame(height: 36)

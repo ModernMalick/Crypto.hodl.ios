@@ -19,8 +19,9 @@ struct EditAsset: View {
 	var body: some View {
 		VStack(){
 			Spacer()
-			Text("Nouvel Investissement")
+			Text("Mettre à jour votre investissement en " + asset.ticker!)
 				.font(Font.custom("Montserrat-Bold", size: 18))
+				.multilineTextAlignment(.center)
 				.frame(maxWidth: .infinity, alignment: .center)
 				.foregroundColor(Color.white)
 				.padding()
@@ -98,8 +99,9 @@ struct EditAsset: View {
 		.cornerRadius(8)
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.background(
-			LinearGradient(gradient: Gradient(colors: [Color("primary"), Color("secondary")]), startPoint: .topLeading, endPoint: .bottomTrailing)
-		)	}
+			LinearGradient(gradient: Gradient(colors: [Color("primaryVariant"), Color("secondaryVariant")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+		)
+	}
 	
 	func save(){
 		var updateTicker: String = asset.ticker!

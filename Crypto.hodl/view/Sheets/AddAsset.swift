@@ -105,7 +105,7 @@ struct AddAsset: View {
 		.cornerRadius(8)
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.background(
-			LinearGradient(gradient: Gradient(colors: [Color("primary"), Color("secondary")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+			LinearGradient(gradient: Gradient(colors: [Color("primaryVariant"), Color("secondaryVariant")]), startPoint: .topLeading, endPoint: .bottomTrailing)
 		)
 	}
 	
