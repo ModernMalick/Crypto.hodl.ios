@@ -16,22 +16,18 @@ struct TableRow: View {
 	
 	
     var body: some View {
-		HStack(spacing: 64){
+		HStack(spacing: 0){
 			Text(asset.ticker!)
-				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: .infinity)
+				.frame(maxWidth: .infinity)
 			Text(String(asset.invested) + currency)
-				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: .infinity)
+				.frame(maxWidth: .infinity)
 			Text(String(asset.value) + currency)
-				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: .infinity)
+				.frame(maxWidth: .infinity)
 			Text(String(gain) + currency)
 				.foregroundColor(getColor())
-				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: .infinity)
+				.frame(maxWidth: .infinity)
 			Image(systemName: "square.and.pencil")
-				.frame(minWidth: 0, maxWidth: 48)
+				.frame(maxWidth: 48)
 				.onTapGesture {
 					showEdit.toggle()
 					print(asset.ticker!)
@@ -42,6 +38,8 @@ struct TableRow: View {
 		}
 		.font(Font.custom("Montserrat-Regular", size: 16))
 		.foregroundColor(Color.white)
+		.padding(.vertical, 16)
+		.cornerRadius(8)
 	}
 	
 	func updateAsset(updatedTicker: String, updatedInvested: Int64, updatedValue: Int64){

@@ -32,7 +32,7 @@ struct Frame: View {
 				.frame(height: 16)
 			VStack{
 				TableHeader()
-					.padding(.top, 16.0)
+					.padding(12.0)
 				if(fetchRequest.isEmpty){
 					Text("Veuillez ajouter un investissement ci-dessous afin de calculer vos gains")
 						.multilineTextAlignment(.center)
@@ -45,10 +45,12 @@ struct Frame: View {
 							let gain = asset.value - asset.invested
 							TableRow(currency: currency, asset: asset, gain: gain, save: saveVC)
 								.listRowBackground(Color("surfaceVariant"))
-								.padding()
+								.listRowInsets(EdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0))
 						}
 						.onDelete(perform: deleteAsset)
 					}
+					.listStyle(GroupedListStyle())
+					.padding(.horizontal, 12.0)
 					.onAppear(perform: {
 						UITableView.appearance().backgroundColor = .clear
 						UITableView.appearance().separatorColor = UIColor(Color.white.opacity(0.08))
@@ -58,7 +60,7 @@ struct Frame: View {
 			}
 				.background(Color("surface"))
 				.cornerRadius(8)
-				.padding(16.0)
+				.padding(12)
 			Spacer()
 			HStack(spacing: 0){
 				Spacer()

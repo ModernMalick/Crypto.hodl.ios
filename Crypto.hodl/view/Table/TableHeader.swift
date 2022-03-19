@@ -11,24 +11,18 @@ struct TableHeader: View {
     var body: some View {
 		HStack(spacing: 0){
 			Text("Symbole")
-				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: .infinity)
+				.frame(maxWidth: .infinity)
 			Text("Investi")
-				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: .infinity)
+				.frame(maxWidth: .infinity)
 			Text("Actuel")
-				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: .infinity)
+				.frame(maxWidth: .infinity)
 			Text("Gain")
-				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: .infinity)
+				.frame(maxWidth: .infinity)
 			Text("")
-				.multilineTextAlignment(.center)
-				.frame(minWidth: 0, maxWidth: 112)
+				.frame(maxWidth: 48)
 		}
 		.font(Font.custom("Montserrat-Bold", size: 14))
 		.foregroundColor(Color.white)
-		.padding(.horizontal)
 	}
 }
 
